@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const solveButton = document.getElementById('solveButton');
 
   myButton.addEventListener('click', function() {
-    messageParagraph.textContent = 'You have donated $1,000,000,000 to the cause!';
+    messageParagraph.textContent = 'You have donated $1,000,000,000!';
     alert('I can get my Lamborghini now!');
   });
 
