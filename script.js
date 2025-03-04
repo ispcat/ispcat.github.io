@@ -27,6 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(generateRandomMatrix, 5000);
 
   solveButton.addEventListener('click', function() {
-    alert('Easy solve clicked!');
+    alert('Next reddle will be comming soon!');
   });
 });
