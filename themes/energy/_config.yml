@@ -1,24 +1,24 @@
 # html lang
-language: en
+language: zh-TW
 
 # main menu navigation
 menu:
     Archives: archives
     Link: link
     About: about
-    404: 404
+    # 404: 404
 
 # display in the home page 
 home_title: WELCOME
 # display in the head right
-header_right: TONG-H
+header_right: ispcat
 # display after the article when copyRight of the page is true 
-article_txt: 转载请注明来源，欢迎指出任何有错误或不够清晰的表达
+article_txt: ©ispcat
 
 # whether to display copyright number
 Copyright:
-    date: Copyright © 2017 - 2023
-    number: 蜀ICP备19024124号
+    date: Copyright © 2024 - 2025
+    number: ''
 
 social:
     Home:
@@ -32,26 +32,14 @@ social:
         sidebar: true # whether to display in the left side
     E-Mail:
         title: E-Mail
-        url: mailto:tongt0232@gmail.com
+        url: mailto:ispcat0304@gmail.com
         icon: iconweibiaoti554
         index: true
         sidebar: true
     GitHub:
         title: GitHub
-        url: https://github.com/tong-h
+        url: https://github.com/ispcat
         icon: iconGitHub
-        index: true
-        sidebar: true
-    掘金:
-        title: juejin
-        url: https://juejin.cn/user/1204720474809741
-        img: /images/juejinicon
-        index: true
-        sidebar: true
-    简书:
-        title: jianshu 
-        url: https://www.jianshu.com/u/20de04cc53de
-        img: /images/jianicon
         index: true
         sidebar: true
 
