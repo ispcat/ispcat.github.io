@@ -1,0 +1,52 @@
+extends _partial/layout.pug
+
+block cssFile
+    link(rel="stylesheet" href="/css/archive.css")
+    link(rel="stylesheet" href="/css/index.css")
+
+block main
+    .maxwidth
+        include _partial/sidebar.pug
+        .archive.rightside
+            if is_category()
+                .artititle!= page.category
+                include _partial/posts.pug
+            if is_archive() && !is_year()
+                #list_archives(style='opacity: 0;display:  none')
+                    #arshow.switch
+                        i.iconfont.iconarchives
+                    != list_archives({})
+                if page.posts.length > 0
+                    #normalposts
+                        #poshow.switch
+                            i.iconfont.iconshijian
+                            span Timeline
+                        each post in page.posts.sort('date', -1).limit(10).toArray()
+                            article
+                                a.artititle(href=url_for(post.path))= post.title
+                                .content.ellipse
+                                    p!= truncate(trim(strip_html(post.content)), {length: 400})
+                                    //- p!= word_wrap(trim(strip_html(post.content)))
+                                .meta
+                                    if min2read
+                                        i.iconfont.iconshijian(title="阅读时长")= min2read(post.content)
+                                    if wordcount
+                                        i.iconfont.iconwenzi(title="字数")= wordcount(post.content)
+                                    i.iconfont.iconshijian(title="创建时间")= date(post.date, "YYYY-MM-DD")
+                        #paginator!= paginator()
+                script.
+                    document.getElementById('arshow').onclick = function() {
+                        document.getElementById('list_archives').style = 'opacity: 0;display: none'
+                        document.getElementById('normalposts').style = 'opacity: 0;display: block'
+                        setTimeout(() => {
+                            document.getElementById('normalposts').style.opacity = '1'                        
+                        }, 100);
+                    }
+                    document.getElementById('poshow').onclick = function() {
+                        document.getElementById('normalposts').style = 'opacity: 0;display: none'
+                        document.getElementById('list_archives').style = 'opacity: 1;display: block'
+                    }
+            if is_year()
+                .artititle= page.month + '/' + page.year
+                include _partial/posts.pug
+            include _partial/footer.pug

@@ -1,0 +1,14 @@
+extends _partial/layout.pug
+
+block cssFile
+    link(rel="stylesheet" href="/css/post.css")
+
+block main
+    .maxwidth
+        include _partial/sidebar.pug
+        .post.rightside
+            h1.artititle= page.title
+            .postDetail!= page.content
+            if (theme.Gitalk.enable && theme.Gitalk.client_id && theme.Gitalk.client_secret)
+                include _partial/comment.pug
+            include _partial/footer.pug

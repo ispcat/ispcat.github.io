@@ -1,0 +1,72 @@
+# html lang
+language: en
+
+# main menu navigation
+menu:
+    Archives: archives
+    Link: link
+    About: about
+    404: 404
+
+# display in the home page 
+home_title: WELCOME
+# display in the head right
+header_right: TONG-H
+# display after the article when copyRight of the page is true 
+article_txt: 转载请注明来源，欢迎指出任何有错误或不够清晰的表达
+
+# whether to display copyright number
+Copyright:
+    date: Copyright © 2017 - 2023
+    number: 蜀ICP备19024124号
+
+social:
+    Home:
+        title: Home
+        url: /archives
+         # if there haven't icon you need  then you can use the image of 40pxX40px and put it on the source/images/icon
+         # the image need two colors #ff7100 and white
+         # img: /images/icon
+        icon: iconHome
+        index: true # whether to display in the index page
+        sidebar: true # whether to display in the left side
+    E-Mail:
+        title: E-Mail
+        url: mailto:tongt0232@gmail.com
+        icon: iconweibiaoti554
+        index: true
+        sidebar: true
+    GitHub:
+        title: GitHub
+        url: https://github.com/tong-h
+        icon: iconGitHub
+        index: true
+        sidebar: true
+    掘金:
+        title: juejin
+        url: https://juejin.cn/user/1204720474809741
+        img: /images/juejinicon
+        index: true
+        sidebar: true
+    简书:
+        title: jianshu 
+        url: https://www.jianshu.com/u/20de04cc53de
+        img: /images/jianicon
+        index: true
+        sidebar: true
+
+Gitalk:
+    enable: false # if you want gitalk
+    id: ''
+    owner: Tong-H 
+    repo: Tong-H.github.io # repo of issue
+    admin: Tong-H # you and your partner, split by the comma
+    client_id: id # Client ID
+    client_secret: secret # Client secret
+    distractionFreeMode: false
+
+Valine: # All the configuration items will be passed to the new Valine function
+    enable: false
+    cdn: //unpkg.com/valine/dist/Valine.min.js
+    appId: appId
+    appKey: appKey

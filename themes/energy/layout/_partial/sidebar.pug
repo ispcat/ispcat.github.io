@@ -1,0 +1,23 @@
+block prepend cssFile
+    link(rel="stylesheet" href="/css/partial/sidebar.css")
+
+#sidebar
+    .social
+        -for(i in theme.social)
+            a(href=theme.social[i].url title=theme.social[i].title)
+                if theme.social[i].icon
+                    i.iconfont(class=theme.social[i].icon)
+                else
+                    img(src=theme.social[i].img + '-sidebar.png')
+    if is_post()
+        if toc(page.content)
+            .structure.category-list
+                !=toc(page.content)
+        if page.relation
+            .relat.category-list
+                p 相关文章
+                each url, label in page.relation
+                    li #[a(href=url title=label)= label]
+    if list_categories()
+        != list_categories({depth:0})
+    .tags!= tagcloud({min_font: 12, max_font: 24, amount: 0, color: true, start_color: '#ffac00', end_color: '#b46e00'})

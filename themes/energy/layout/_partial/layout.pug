@@ -1,0 +1,34 @@
+- var pageTitle = page.title || config.subtitle || ''
+- if (is_archive()) pageTitle = 'Blog'
+- if (is_tag()) pageTitle = 'Tag: ' + page.tag
+- if (is_category()) pageTitle = 'Category: ' + page.category
+- if (is_month()) pageTitle += ': ' + page.month + '/' + page.year
+- if (is_year()) pageTitle += ': ' + page.year
+- pageTitle += ' [ ' + config.title + ' ]'
+doctype html
+html(lang=config.language)
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge, chrome=1")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="keywords" content=config.keywords)
+        meta(name="descriptioon" content=config.description)
+        meta(name="renderer" content="wekit")
+        link(rel="shortcut icon" href="/images/favicon.ico", type="image/x-icon")
+        link(rel="stylesheet" href="/css/public.css")
+        link(rel="stylesheet" href="/css/reset.css")
+        link(rel="stylesheet" href="/css/iconfont.css")
+        title= pageTitle
+        block cssFile
+    body
+        if !is_home()
+            include ./header.pug
+            .main 
+                if body
+                    div!= body
+                else
+                    block main
+        else
+            block body
+        block js
+        script(async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js")
